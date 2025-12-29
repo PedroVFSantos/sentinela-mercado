@@ -1,24 +1,38 @@
-Sentinela Mercado
+# Sentinela Mercado
+
 Real-time anomaly detection for market transactions using distributed streaming architecture.
 
-Architecture
-Bronze: Python producer streams transactions to Kafka
-Silver: PySpark Streaming processes events and writes to Delta Lake
-Gold: Batch jobs calculate statistical metrics and detect anomalies
-Serving: PostgreSQL stores refined data, visualized in Metabase
+---
 
-Stack
+## Architecture
+
+**Bronze**: Python producer streams transactions to Kafka  
+**Silver**: PySpark Streaming processes events and writes to Delta Lake  
+**Gold**: Batch jobs calculate statistical metrics and detect anomalies  
+**Serving**: PostgreSQL stores refined data, visualized in Metabase
+
+---
+
+## Stack
+
 Python (PySpark) • Kafka • Spark • Delta Lake • PostgreSQL • Redis • Docker • Metabase
 
-Anomaly Detection
+---
+
+## Anomaly Detection
+
 Uses Z-score to flag suspicious transactions:
-Z=X−μσZ = \frac{X - \mu}{\sigma}Z=σX−μ​
-Transactions with Z>2.0Z > 2.0
-Z>2.0 are marked as anomalies.
 
+$$Z = \frac{X - \mu}{\sigma}$$
 
-Running
-bash# Start infrastructure
+Transactions with $Z > 2.0$ are marked as anomalies.
+
+---
+
+## Running
+
+```bash
+# Start infrastructure
 docker-compose up -d
 
 # Run producer
@@ -36,6 +50,17 @@ docker exec -it spark-master spark-submit \
 
 # Dashboard
 http://localhost:3000
+```
 
-Results
-[Add your Metabase dashboard PDF here]
+---
+
+## Results
+
+<img width="811" height="637" alt="image" src="https://github.com/user-attachments/assets/549ed876-7f75-4639-a757-973d9b385493" />
+
+
+---
+
+## Contributing
+
+Follow Conventional Commits: `feat`, `fix`, `chore`, `docs`
