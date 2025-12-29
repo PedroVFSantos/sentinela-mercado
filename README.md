@@ -61,6 +61,3 @@ http://localhost:3000
 
 ---
 
-## Contributing
-
-Follow Conventional Commits: `feat`, `fix`, `chore`, `docs`
