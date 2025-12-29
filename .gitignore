@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.py[cod]
+venv/
+
+# Spark/Delta
+spark-warehouse/
+checkpoint/
+derby.log
+metastore_db/
+
+# Data and Logs
+data/
+*.log
+
+# IDE
+.vscode/
+.idea/
