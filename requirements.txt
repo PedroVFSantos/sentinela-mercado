@@ -1,0 +1,8 @@
+# Local (host) dependencies: producer + Streamlit dashboard.
+# Spark jobs run inside the spark-master container and don't need these.
+-r apps/producer/requirements.txt
+
+streamlit>=1.37
+redis>=5.0
+pandas>=2.0
+deltalake>=0.18
